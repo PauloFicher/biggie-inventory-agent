@@ -89,8 +89,8 @@ RLS: Autenticados leen todo. Solo service_role escribe.
 ## ⑥ Variables de entorno
 
 ```
-OPENAI_API_KEY=sk-proj-...
-DEEPSEEK_API_KEY=sk-...          # Alternativa de menor costo
+OPENAI_API_KEY=your-openai-api-key
+DEEPSEEK_API_KEY=your-deepseek-api-key          # Alternativa de menor costo
 SUPABASE_SERVICE_ROLE_KEY=...    # Para operaciones admin (tools)
 LLM_PROVIDER=openai              # "openai" o "deepseek"
 ```
