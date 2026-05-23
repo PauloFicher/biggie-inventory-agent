@@ -58,6 +58,13 @@ function getOpenAIClient(): OpenAI {
     });
   }
 
+  if (provider === 'groq') {
+    return new OpenAI({
+      apiKey: process.env.GROQ_API_KEY,
+      baseURL: 'https://api.groq.com/openai/v1',
+    });
+  }
+
   return new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
   });
@@ -67,6 +74,9 @@ function getModel(): string {
   const provider = process.env.LLM_PROVIDER || 'openai';
   if (provider === 'deepseek') {
     return process.env.DEEPSEEK_MODEL || 'deepseek-chat';
+  }
+  if (provider === 'groq') {
+    return process.env.GROQ_MODEL || 'qwen/qwen3-32b';
   }
   return process.env.OPENAI_MODEL || 'gpt-4o';
 }
